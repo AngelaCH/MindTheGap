@@ -1,0 +1,13 @@
+#!/bin/bash
+script_path="gapper.moab"
+res_nodes="nodes=1:ppn=16"
+res_time="walltime=00:05:00"
+
+for j in {6..10..1}
+	do
+		job_variable="j=${j}"
+		job_name="JOB_NUMBER_${j}"
+		msub -v "${job_variable}" -N "${job_name}" -l "${res_nodes}","${res_time}" -m bae \
+		"${script_path}"
+done
+

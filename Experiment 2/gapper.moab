@@ -1,0 +1,15 @@
+#!/bin/bash
+R_script_path="gapper.R"
+R_output="gapper.R_gmm_${j}_${MOAB_JOBID}.log"
+echo "Working Directory:			$PWD"
+echo "Running on host				$HOSTNAME"
+echo "Job id:					$MOAB_JOBID"
+echo "Job name:					$MOAB_JOBNAME"
+echo "Number of nodes allocated to job:		$MOAB_NODECOUNT"
+echo "Number of cores allocated to job:		$MOAB_PROCCOUNT"
+module load math/R
+R CMD BATCH \
+	"--args j=${j}" \
+	 "${R_script_path}" \
+	 "${R_output}"
+
