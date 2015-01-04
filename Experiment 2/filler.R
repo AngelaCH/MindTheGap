@@ -119,7 +119,7 @@ filler_pmm<-function(i,j){
   bxy_fmi_pmm<-est_bxy$fmi[[2]]
   bxy_sd<-summary(lm(V1~V2,as.data.frame(completedata)))[[4]][2,2]
   bxy<-summary(lm(V1~V2,as.data.frame(completedata)))[[4]][2,1]
-  bxy_sb_pmm<-(byx_Qbar_pmm-bxy)/bxy_sd 
+  bxy_sb_pmm<-(bxy_Qbar_pmm-bxy)/bxy_sd 
   ########
   #r2bxy & pwr
   ######## 
@@ -270,7 +270,7 @@ filler_norm<-function(i,j){
  bxy_fmi_norm<-est_bxy$fmi[[2]]
  bxy_sd<-summary(lm(V1~V2,as.data.frame(completedata)))[[4]][2,2]
  bxy<-summary(lm(V1~V2,as.data.frame(completedata)))[[4]][2,1]
- bxy_sb_norm<-(byx_Qbar_norm-bxy)/bxy_sd 
+ bxy_sb_norm<-(bxy_Qbar_norm-bxy)/bxy_sd 
  ########
  #r2bxy & pwr
  ######## 
