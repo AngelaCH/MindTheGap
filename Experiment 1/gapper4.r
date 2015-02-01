@@ -31,7 +31,6 @@ generator <- function(i){
   #Funktion, die aus Vorgaben wie Anzahl, mean, sd und cor einen multinormalverteilten Datensatz erstellt
   
   datmat <- function(N, mvec, sdvec, cor){
-    set.seed(as.integer((as.double(Sys.time())*1000+Sys.getpid())%%2^31))#Unique Seed aus der Computeruhr berechnen, damit keine zwei Datensätze aus dem gleichen Seed gezogen werden
     covarmat <- cor2cov(cor, sdvec)
     datamat <- mvrnorm(n=N, mu=mvec, Sigma=covarmat, tol=1e-6, empirical=TRUE)#die erzeugten Datensätze haben die gewünschte Verteilung bis auf 1e-6 genau
     return(datamat)
